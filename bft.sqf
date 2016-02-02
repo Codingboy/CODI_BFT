@@ -316,6 +316,7 @@ CODI_BFT_fnc_update = {
 		else
 		{
 			_marker2 = createMarkerLocal[format["CODI_BFT_groupSize_%1", _forEachIndex], _groupPosition];
+			_marker2 setMarkerAlphaLocal 1;
 			if (!_hasGroupLeader) then
 			{
 					_marker2 setMarkerSizeLocal [0.75, 0.75];
@@ -428,6 +429,10 @@ CODI_BFT_fnc_canBeTracked = {
 	if (isClass (configFile >> "CfgPatches" >> "CODI_BFT_ACE")) then
 	{
 		_ret = [_unit, "CODI_BFT_Tablet"] call ace_common_fnc_hasItem;
+	};
+	if ((typeOf _unit) == "B_UAV_AI") then
+	{
+		_ret = true;
 	};
 	_ret
 };
