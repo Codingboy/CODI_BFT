@@ -273,7 +273,7 @@ CODI_BFT_fnc_update = {
 			};
 			case independent:
 			{
-					_markerType = "i" + _markerType;
+					_markerType = "n" + _markerType;
 			};
 		};
 		_hasGroupLeader = false;
